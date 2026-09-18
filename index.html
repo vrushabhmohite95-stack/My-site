@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vrushabh Cake Mart | Fresh Cakes in Virar</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#fff8fb;
+  color:#333;
+}
+
+/* NAVBAR */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:999;
+  padding:18px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(126,20,57,.96);
+  color:white;
+}
+
+.logo{
+  font-size:23px;
+  font-weight:bold;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+  font-weight:bold;
+}
+
+nav a:hover{
+  color:#ffd1df;
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:100px 20px 40px;
+
+  background:
+  linear-gradient(rgba(45,0,20,.55),rgba(45,0,20,.65)),
+  url("https://images.unsplash.com/photo-1578985545062-69928b1d9587")
+  center/cover;
+
+  color:white;
+}
+
+.hero-content{
+  animation:fadeUp 1.3s ease;
+}
+
+.hero h1{
+  font-size:60px;
+  margin-bottom:15px;
+}
+
+.hero p{
+  font-size:21px;
+  margin-bottom:30px;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 25px;
+  margin:7px;
+  border-radius:30px;
+  text-decoration:none;
+  color:white;
+  background:#e91e63;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:translateY(-4px);
+  background:#c2185b;
+  box-shadow:0 8px 20px #0004;
+}
+
+.whatsapp{
+  background:#25D366;
+}
+
+.instagram{
+  background:#d62976;
+}
+
+/* SECTIONS */
+section{
+  padding:90px 7%;
+  text-align:center;
+}
+
+.title{
+  font-size:38px;
+  color:#8b1e3f;
+  margin-bottom:40px;
+}
+
+/* FEATURE CARDS */
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+
+.feature{
+  background:white;
+  padding:30px 20px;
+  border-radius:18px;
+  box-shadow:0 8px 25px #00000012;
+  transition:.3s;
+}
+
+.feature:hover{
+  transform:translateY(-8px);
+}
+
+.feature span{
+  font-size:40px;
+}
+
+/* FILTER */
+.filters{
+  margin-bottom:30px;
+}
+
+.filters button{
+  border:0;
+  padding:10px 20px;
+  margin:5px;
+  border-radius:20px;
+  cursor:pointer;
+  background:#ffe0e9;
+  color:#8b1e3f;
+  font-weight:bold;
+}
+
+.filters button:hover{
+  background:#e91e63;
+  color:white;
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 8px 25px #00000015;
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.02);
+}
+
+.card img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+}
+
+.card-info{
+  padding:18px;
+}
+
+.card h3{
+  color:#8b1e3f;
+  margin-bottom:8px;
+}
+
+.price{
+  color:#e91e63;
+  font-size:21px;
+  font-weight:bold;
+  margin:10px;
+}
+
+/* ABOUT */
+.about{
+  max-width:850px;
+  margin:auto;
+  font-size:18px;
+  line-height:1.8;
+}
+
+/* ORDER */
+.order{
+  background:#ffeaf0;
+}
+
+form{
+  max-width:650px;
+  margin:auto;
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 10px 30px #0002;
+  text-align:left;
+}
+
+input,select,textarea{
+  width:100%;
+  padding:14px;
+  margin:8px 0 18px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  font-size:16px;
+}
+
+textarea{
+  min-height:100px;
+}
+
+form button{
+  width:100%;
+  border:0;
+  padding:15px;
+  border-radius:30px;
+  background:#25D366;
+  color:white;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* CONTACT */
+.contact{
+  background:#fff3f7;
+}
+
+.contact-box{
+  max-width:650px;
+  margin:auto;
+  font-size:18px;
+  line-height:2;
+}
+
+/* FOOTER */
+footer{
+  background:#7e1439;
+  color:white;
+  padding:30px;
+  text-align:center;
+}
+
+.social{
+  margin:15px;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.reveal{
+  animation:fadeUp 1s ease;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+
+  nav{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  nav a{
+    margin:5px;
+    font-size:13px;
+  }
+
+  .hero h1{
+    font-size:40px;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+
+  section{
+    padding:70px 5%;
+  }
+
+  .title{
+    font-size:30px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">🍰 Vrushabh Cake Mart</div>
+
+<div>
+<a href="#home">Home</a>
+<a href="#cakes">Cakes</a>
+<a href="#order">Order</a>
+<a href="#contact">Contact</a>
+</div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>Vrushabh Cake Mart 🎂</h1>
+
+<p>
+Fresh Cakes • Beautiful Designs • Sweet Memories ❤️
+</p>
+
+<a href="#cakes" class="btn">
+Explore Cakes
+</a>
+
+<a
+href="https://wa.me/917820942131?text=Hello%20Vrushabh%20Cake%20Mart%2C%20I%20want%20to%20order%20a%20cake."
+class="btn whatsapp">
+💬 WhatsApp Order
+</a>
+
+</div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section>
+
+<h2 class="title">Why Choose Us?</h2>
+
+<div class="features">
+
+<div class="feature">
+<span>🎂</span>
+<h3>Fresh Cakes</h3>
+<p>Freshly prepared for your special moments.</p>
+</div>
+
+<div class="feature">
+<span>❤️</span>
+<h3>Made With Love</h3>
+<p>Beautiful cakes made with care.</p>
+</div>
+
+<div class="feature">
+<span>🚚</span>
+<h3>Easy Ordering</h3>
+<p>Order quickly through WhatsApp.</p>
+</div>
+
+<div class="feature">
+<span>⭐</span>
+<h3>Premium Quality</h3>
+<p>Quality ingredients and delicious taste.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CAKE GALLERY -->
+
+<section id="cakes">
+
+<h2 class="title">Our Cake Gallery 🎂</h2>
+
+<div class="filters">
+
+<button onclick="filterCakes('all')">All</button>
+<button onclick="filterCakes('birthday')">Birthday</button>
+<button onclick="filterCakes('chocolate')">Chocolate</button>
+<button onclick="filterCakes('premium')">Premium</button>
+
+</div>
+
+
+<div class="gallery">
+
+
+<div class="card birthday">
+
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
+
+<div class="card-info">
+
+<h3>Birthday Chocolate Cake</h3>
+
+<p>Perfect for birthdays.</p>
+
+<div class="price">₹499</div>
+
+</div>
+
+</div>
+
+
+<div class="card chocolate">
+
+<img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62">
+
+<div class="card-info">
+
+<h3>Dark Chocolate Cake</h3>
+
+<p>Rich chocolate flavour.</p>
+
+<div class="price">₹599</div>
+
+</div>
+
+</div>
+
+
+<div class="card premium">
+
+<img src="https://images.unsplash.com/photo-1551024506-0bccd828d307">
+
+<div class="card-info">
+
+<h3>Premium Celebration Cake</h3>
+
+<p>Beautiful premium design.</p>
+
+<div class="price">₹699</div>
+
+</div>
+
+</div>
+
+
+<div class="card birthday">
+
+<img src="https://images.unsplash.com/photo-1588195538326-c5b1e5b80c97">
+
+<div class="card-info">
+
+<h3>Strawberry Birthday Cake</h3>
+
+<p>Fresh strawberry flavour.</p>
+
+<div class="price">₹549</div>
+
+</div>
+
+</div>
+
+
+<div class="card premium">
+
+<img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187">
+
+<div class="card-info">
+
+<h3>Wedding Cake</h3>
+
+<p>Elegant cake for special occasions.</p>
+
+<div class="price">₹999</div>
+
+</div>
+
+</div>
+
+
+<div class="card chocolate">
+
+<img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d">
+
+<div class="card-info">
+
+<h3>Chocolate Cream Cake</h3>
+
+<p>Soft sponge and creamy chocolate.</p>
+
+<div class="price">₹549</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section>
+
+<h2 class="title">About Vrushabh Cake Mart ❤️</h2>
+
+<div class="about">
+
+<p>
+Welcome to <b>Vrushabh Cake Mart</b>!
+We create delicious cakes for birthdays,
+anniversaries, weddings and every special celebration.
+</p>
+
+<br>
+
+<p>
+Our goal is simple — beautiful cakes,
+great taste and happy customers. 🎂
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ORDER FORM -->
+
+<section class="order" id="order">
+
+<h2 class="title">Place Your Cake Order 🎂</h2>
+
+<form id="orderForm">
+
+<label>Your Name</label>
+
+<input
+type="text"
+id="name"
+placeholder="Enter your name"
+required>
+
+
+<label>Phone Number</label>
+
+<input
+type="tel"
+id="phone"
+placeholder="Enter phone number"
+required>
+
+
+<label>Select Cake</label>
+
+<select id="cake" required>
+
+<option value="">Choose a cake</option>
+
+<option>Birthday Chocolate Cake - ₹499</option>
+<option>Dark Chocolate Cake - ₹599</option>
+<option>Premium Celebration Cake - ₹699</option>
+<option>Strawberry Birthday Cake - ₹549</option>
+<option>Wedding Cake - ₹999</option>
+<option>Chocolate Cream Cake - ₹549</option>
+
+</select>
+
+
+<label>Quantity</label>
+
+<input
+type="number"
+id="quantity"
+min="1"
+value="1"
+required>
+
+
+<label>Delivery / Pickup Date</label>
+
+<input
+type="date"
+id="date"
+required>
+
+
+<label>Message / Special Requirement</label>
+
+<textarea
+id="message"
+placeholder="Write your cake requirements..."></textarea>
+
+
+<button type="submit">
+💬 Send Order on WhatsApp
+</button>
+
+</form>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<h2 class="title">Contact Us 📞</h2>
+
+<div class="contact-box">
+
+<p>📍 <b>Location:</b> Virar, Maharashtra</p>
+
+<p>📞 <b>Phone:</b> 7820942131</p>
+
+<p>🕐 <b>Opening:</b> 10:00 AM – 10:00 PM</p>
+
+
+<a
+href="tel:+917820942131"
+class="btn">
+📞 Call Now
+</a>
+
+
+<a
+href="https://wa.me/917820942131"
+class="btn whatsapp">
+💬 WhatsApp
+</a>
+
+
+<a
+href="https://www.google.com/maps/search/?api=1&query=Virar%2C%20Maharashtra"
+target="_blank"
+class="btn">
+📍 Google Maps
+</a>
+
+
+<a
+href="https://www.instagram.com/"
+target="_blank"
+class="btn instagram">
+📸 Instagram
+</a>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<h3>🍰 Vrushabh Cake Mart</h3>
+
+<p>Fresh cakes for every celebration ❤️</p>
+
+<div class="social">
+
+<a
+href="https://www.instagram.com/"
+target="_blank"
+style="color:white;text-decoration:none;">
+Instagram
+</a>
+
+&nbsp; | &nbsp;
+
+<a
+href="https://wa.me/917820942131"
+style="color:white;text-decoration:none;">
+WhatsApp
+</a>
+
+</div>
+
+<p>
+© 2026 Vrushabh Cake Mart. All Rights Reserved.
+</p>
+
+</footer>
+
+
+<script>
+
+/* CAKE FILTER */
+
+function filterCakes(category){
+
+const cakes=document.querySelectorAll(".card");
+
+cakes.forEach(cake=>{
+
+if(category==="all" ||
+cake.classList.contains(category)){
+
+cake.style.display="block";
+
+}else{
+
+cake.style.display="none";
+
+}
+
+});
+
+}
+
+
+/* WHATSAPP ORDER */
+
+document.getElementById("orderForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const name=document.getElementById("name").value;
+
+const phone=document.getElementById("phone").value;
+
+const cake=document.getElementById("cake").value;
+
+const quantity=document.getElementById("quantity").value;
+
+const date=document.getElementById("date").value;
+
+const message=document.getElementById("message").value;
+
+
+const text=
+
+"Hello Vrushabh Cake Mart! 🍰%0A%0A"+
+
+"👤 Name: "+name+"%0A"+
+
+"📞 Phone: "+phone+"%0A"+
+
+"🎂 Cake: "+cake+"%0A"+
+
+"🔢 Quantity: "+quantity+"%0A"+
+
+"📅 Date: "+date+"%0A"+
+
+"📝 Requirement: "+message;
+
+
+window.open(
+"https://wa.me/917820942131?text="+text,
+"_blank"
+);
+
+});
+
+</script>
+
+</body>
+  </html>
